@@ -69,6 +69,6 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	rand.Seed(time.Now().UnixNano())
 	randNum := rand.Intn(num-1) + 1
-	fmt.Printf("%s : %v : %v", m.Author, num, randNum)
+	fmt.Printf("%s : %v : %v\n", m.Author, num, randNum)
 	s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("%v tirou %v no d%v", m.Author.Mention(), randNum, num))
 }
